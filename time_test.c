@@ -30,6 +30,5 @@ int main(int argc, char const *argv[])
     pi = double compute_pi_Leibniz(size_t N)
 #endif
     printf("N = %d , pi = %lf\n", N, pi);
-
     return 0;
 }

@@ -27,8 +27,9 @@ int main(int argc, char const *argv[])
 #endif
 
 #if defined(LEIBNIZ)
-    pi = double compute_pi_Leibniz(size_t N)
+    pi = compute_pi_Leibniz(N);
 #endif
+    
     printf("N = %d , pi = %lf\n", N, pi);
     return 0;
 }

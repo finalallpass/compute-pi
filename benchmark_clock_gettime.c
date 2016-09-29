@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "computepi.h"
+#include <math.h>
 
 #define CLOCK_ID CLOCK_MONOTONIC_RAW
 #define ONE_SEC 1000000000.0
@@ -24,7 +25,6 @@ int main(int argc, char const *argv[])
     clock_gettime(CLOCK_ID, &end);
     printf("%lf,", (double) (end.tv_sec - start.tv_sec) +
            (end.tv_nsec - start.tv_nsec)/ONE_SEC);
-
 
     // OpenMP with 2 threads
     clock_gettime(CLOCK_ID, &start);
@@ -71,8 +71,8 @@ int main(int argc, char const *argv[])
         compute_pi_Leibniz(N);
     }
     clock_gettime(CLOCK_ID, &end);
-    printf("%lf,", (double) (end.tv_sec - start.tv_sec) +
+    printf("%lf ", (double) (end.tv_sec - start.tv_sec) +
            (end.tv_nsec - start.tv_nsec)/ONE_SEC);
-    
+
     return 0;
 }

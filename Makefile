@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -O0 -std=gnu99 -Wall -fopenmp -mavx
 EXECUTABLE = \
 	time_test_baseline time_test_openmp_2 time_test_openmp_4 \
-	time_test_avx time_test_avxunroll time_test_Leibniz	\
+	time_test_avx time_test_avxunroll time ./time_test_Leibniz \
 	benchmark_clock_gettime
 
 default: computepi.o
@@ -26,7 +26,6 @@ check: default
 	time ./time_test_avx
 	time ./time_test_avxunroll
 	time ./time_test_Leibniz
-	
 
 gencsv: default
 	for i in `seq 1000 1000 250000`; do \
